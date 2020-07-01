@@ -173,9 +173,9 @@ class Connection
         if (preg_match('/bolt/', $this->uri)) {
             $port = isset($params['port']) ? (int) $params['port'] : BoltDriver::DEFAULT_TCP_PORT;
             $uri = sprintf('%s://%s:%d', $params['scheme'], $params['host'], $port);
-            $config = null;
+            $config = $this->config ? $this->config : BoltConfiguration::create();
             if (isset($params['user']) && isset($params['pass'])) {
-                $config = BoltConfiguration::create()->withCredentials($params['user'], $params['pass']);
+                $config = $config->withCredentials($params['user'], $params['pass']);
             }
             $this->driver = BoltGraphDB::driver($uri, $config);
         } elseif (preg_match('/http/', $this->uri)) {
