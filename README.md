@@ -1,5 +1,7 @@
 # GraphAware Neo4j PHP Client
 
+⚠️ Deprecated library. Please use https://github.com/laudis-technologies/neo4j-php-client
+
 ## An Enterprise Grade Client for Neo4j
 
 [![Build Status](https://travis-ci.org/graphaware/neo4j-php-client.svg?branch=master)](https://travis-ci.org/graphaware/neo4j-php-client)
